@@ -32,9 +32,9 @@ public class CardHelper {
 
 			String[] array = splitScanResult(dataToExtractFrom);
 			//TODO: Fix decoding issue for names. Seems not to be working
-			String surName =  String.valueOf(Base64.decode(array[0].getBytes("UTF-8"), Base64.CRLF));
-			String givenNames = String.valueOf(Base64.decode(array[1].getBytes("UTF-8"), Base64.CRLF));
-			String otherNames = String.valueOf(Base64.decode(array[2].getBytes("UTF-8"), Base64.CRLF));
+			String surName =  new String(Base64.decode(array[0].getBytes(), Base64.DEFAULT));
+			String givenNames = new String (Base64.decode(array[1].getBytes(), Base64.DEFAULT));
+			String otherNames = new String (Base64.decode(array[2].getBytes(), Base64.DEFAULT));
 
 
 			String dateOfBirth = array[3];
